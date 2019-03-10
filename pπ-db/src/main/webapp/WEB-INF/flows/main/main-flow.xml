@@ -5,7 +5,7 @@
 		http://www.springframework.org/schema/webflow
 		http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
 
-	<var name="searchCriteria" class="org.springframework.webflow.samples.booking.SearchCriteria"/>
+	<var name="searchCriteria" class="org.ppai.store.db.booking.SearchCriteria"/>
 	
 	<view-state id="enterSearchCriteria">
 		<on-render>
@@ -19,7 +19,7 @@
 	</view-state>
 	
 	<view-state id="reviewHotels">
-		<var name="hotels" class="org.springframework.webflow.samples.booking.HotelLazyDataModel"/>
+		<var name="hotels" class="org.ppai.store.db.booking.HotelLazyDataModel"/>
 		<on-render>
 			<evaluate expression="hotels.setSearchCriteria(searchCriteria)" />
 		</on-render>
