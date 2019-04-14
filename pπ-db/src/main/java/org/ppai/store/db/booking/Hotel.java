@@ -3,15 +3,13 @@ package org.ppai.store.db.booking;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * A hotel where users may book stays.
  */
 @Entity
+@Table(name = "Hotel")
 public class Hotel implements Serializable {
 
 	private static final long serialVersionUID = 4011346719502656269L;

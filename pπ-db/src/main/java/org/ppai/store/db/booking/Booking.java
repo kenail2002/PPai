@@ -6,15 +6,7 @@ import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-import javax.persistence.Basic;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.persistence.Transient;
+import javax.persistence.*;
 import javax.validation.constraints.Future;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -28,6 +20,7 @@ import org.springframework.binding.validation.ValidationContext;
  * A Hotel Booking made by a User.
  */
 @Entity
+@Table(name = "Booking")
 public class Booking implements Serializable {
 
 	private static final long serialVersionUID = 1171567558348174963L;
