@@ -1,10 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>测试1</title>
+    <title>Hover Tabs - jQuery EasyUI Demo</title>
+    <link rel="stylesheet" type="text/css" href="uilib/easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="uilib/easyui/themes/icon.css">
+     <script type="text/javascript" src="uilib/easyui/jquery.min.js"></script>
+    <script type="text/javascript" src="uilib/easyui/jquery.easyui.min.js"></script>
 </head>
 <body>
-内容111
+ <p>我的任务管理</p>
+<div style="margin:20px 0;"></div>
+<div id="tt" class="easyui-tabs" style="width:700px;height:250px">
+    <div title="代办" style="padding:10px">
+        <a href="tasklist/t.html">代办任务</a>
+
+    </div>
+    <div title="所有任务" style="padding:10px">
+        <a href="tasklist/lst.html">所有任务列表</a>
+    </div>
+    <div title="求助" data-options="iconCls:'icon-help',closable:true" style="padding:10px">
+       <a href="issue/basic.html">新建求助</a>
+    </div>
+</div>
+<script type="text/javascript">
+        $(function(){
+            var tabs = $('#tt').tabs().tabs('tabs');
+            for(var i=0; i<tabs.length; i++){
+                tabs[i].panel('options').tab.unbind().bind('mouseenter',{index:i},function(e){
+                    $('#tt').tabs('select', e.data.index);
+                });
+            }
+        });
+    </script>
 </body>
 </html>
