@@ -15,5 +15,7 @@
     <packaging>pom</packaging>
     <modules>
 <module>pπ-db</module>
+<module>tasklist</module>
+
     </modules>
 </project>
