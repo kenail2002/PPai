@@ -2,16 +2,17 @@
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:p="http://www.springframework.org/schema/p" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
-       xmlns="http://www.springframework.org/schema/beans"
+       xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/tx
     http://www.springframework.org/schema/tx/spring-tx.xsd
     http://www.springframework.org/schema/jdbc
-    http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd">
+    http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd
+  http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-    <!-- 自动扫描web包 ,将带有注解的类 纳入spring容器管理
-    <context:component-scan base-package="com.eduoinfo.finances.bank.web"></context:component-scan>    -->
+     <context:component-scan base-package="com.ppai.timemgr.tasklist.main"/>
 
     <!-- 引入jdbc配置文件 -->
     <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -51,6 +52,8 @@
 
     <!-- 启用对事务注解的支持 -->
     <tx:annotation-driven transaction-manager="transactionManager"/>
+
+    <bean id="repository" class="com.ppai.timemgr.tasklist.main.TaskRepository"/>
 
     <!-- Cache配置
         <aop:aspectj-autoproxy proxy-target-class="true" />
