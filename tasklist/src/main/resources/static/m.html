@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Hover Tabs - jQuery EasyUI Demo</title>
-    <link rel="stylesheet" type="text/css" href="uilib/easyui/themes/default/easyui.css">
-    <link rel="stylesheet" type="text/css" href="uilib/easyui/themes/icon.css">
-     <script type="text/javascript" src="uilib/easyui/jquery.min.js"></script>
-    <script type="text/javascript" src="uilib/easyui/jquery.easyui.min.js"></script>
+    <link href="uilib/easyui/themes/default/easyui.css" rel="stylesheet" type="text/css">
+    <link href="uilib/easyui/themes/icon.css" rel="stylesheet" type="text/css">
+    <script src="uilib/easyui/jquery.min.js" type="text/javascript"></script>
+    <script src="uilib/easyui/jquery.easyui.min.js" type="text/javascript"></script>
 </head>
 <body>
- <p>我的任务管理</p>
+<p>我的任务管理</p>
 <div style="margin:20px 0;"></div>
-<div id="tt" class="easyui-tabs" style="width:700px;height:250px">
-    <div title="代办" style="padding:10px">
+<div class="easyui-tabs" id="tt" style="width:700px;height:250px">
+    <div style="padding:10px" title="代办">
         <a href="tasklist/t.html">代办任务</a>
 
     </div>
-    <div title="所有任务" style="padding:10px">
+    <div style="padding:10px" title="所有任务">
         <a href="tasklist/lst.html">所有任务列表</a>
     </div>
-    <div title="求助" data-options="iconCls:'icon-help',closable:true" style="padding:10px">
-       <a href="issue/basic.html">新建求助</a>
+    <div data-options="iconCls:'icon-help',closable:true" style="padding:10px" title="求助">
+        <a href="issue/basic.html">新建求助</a>
     </div>
 </div>
 <script type="text/javascript">
@@ -32,6 +32,7 @@
                 });
             }
         });
-    </script>
+
+</script>
 </body>
 </html>

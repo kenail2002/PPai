@@ -7,12 +7,12 @@ import org.springframework.test.context.ContextConfiguration
 import org.springframework.test.context.junit4.SpringRunner
 
 @RunWith(SpringRunner::class)
-@ContextConfiguration(locations=arrayOf("classpath:applicationContext.xml"))
+@ContextConfiguration(locations = arrayOf("classpath:applicationContext.xml"))
 @SpringBootTest
 class TasklistApplicationTests {
 
-	@Test
-	fun contextLoads() {
-	}
+    @Test
+    fun contextLoads() {
+    }
 
 }

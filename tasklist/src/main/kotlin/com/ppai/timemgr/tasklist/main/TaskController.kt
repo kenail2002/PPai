@@ -7,10 +7,10 @@ import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
 
 @RestController
-class PersonController(@Autowired private val repository: TaskRepository) {
+class TaskController(@Autowired private val repository: TaskRepository) {
 
     @PostMapping("/task")
-    internal fun create(@RequestBody personStream: Publisher<Task>): Any{
+    internal fun create(@RequestBody personStream: Publisher<Task>): Any {
         return this.repository.save(personStream)
     }
 

@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>录入任务</title>
-    <link rel="stylesheet" type="text/css" href="../uilib/easyui/themes/metro/easyui.css">
-	<link rel="stylesheet" type="text/css" href="../uilib/easyui/themes/mobile.css">
-	<link rel="stylesheet" type="text/css" href="../uilib/easyui/themes/icon.css">
-	<script type="text/javascript" src="../uilib/easyui/jquery.min.js"></script>
-	<script type="text/javascript" src="../uilib/easyui/jquery.easyui.min.js"></script>
-	<script type="text/javascript" src="../uilib/easyui/jquery.easyui.mobile.js"></script>
+    <link href="../uilib/easyui/themes/metro/easyui.css" rel="stylesheet" type="text/css">
+    <link href="../uilib/easyui/themes/mobile.css" rel="stylesheet" type="text/css">
+    <link href="../uilib/easyui/themes/icon.css" rel="stylesheet" type="text/css">
+    <script src="../uilib/easyui/jquery.min.js" type="text/javascript"></script>
+    <script src="../uilib/easyui/jquery.easyui.min.js" type="text/javascript"></script>
+    <script src="../uilib/easyui/jquery.easyui.mobile.js" type="text/javascript"></script>
 </head>
 <body>
-<form id="task_001" action="">
+<form action="" id="task_001">
     <table>
         <tr>
             <td>标题</td>
@@ -20,29 +20,29 @@
         <tr>
             <td>任务描述</td>
 
-            <td><input type="textarea" id="descr"></input></td>
+            <td><input id="descr" type="textarea"></input></td>
         </tr>
         <tr>
             <td>开始时间</td>
-            <td> <input class="easyui-datetimebox" name="startTime"
-                       data-options="required:true,showSeconds:false" value="3/4/2010 2:3" style="width:150px"></td>
+            <td><input class="easyui-datetimebox" data-options="required:true,showSeconds:false"
+                       name="startTime" style="width:150px" value="3/4/2010 2:3"></td>
         </tr>
         <tr>
             <td>结束时间</td>
-            <td><input class="easyui-datetimebox" name="endTime"
-                       data-options="required:true,showSeconds:false" value="3/4/2010 2:3" style="width:150px"></td>
+            <td><input class="easyui-datetimebox" data-options="required:true,showSeconds:false"
+                       name="endTime" style="width:150px" value="3/4/2010 2:3"></td>
         </tr>
         <tr>
             <td>涉及人员</td>
-            <td><input type="text" id="otherGuys"></input></td>
+            <td><input id="otherGuys" type="text"></input></td>
         </tr>
         <tr>
             <td>附加信息</td>
-            <td>    <input class="easyui-filebox" style="width:300px"  id="inpputFile"> </td>
+            <td><input class="easyui-filebox" id="inpputFile" style="width:300px"></td>
         </tr>
         <tr>
             <td></td>
-            <td><input type="button" id="submitBtn" value="提交"></input></td>
+            <td><input id="submitBtn" type="button" value="提交"></input></td>
         </tr>
     </table>
 </form>
