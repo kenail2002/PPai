@@ -7,15 +7,17 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Repository
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
+import java.util.*
 
 @Repository("repository")
 class TaskRepository {
     @Autowired
     private val taskRepo: TaskRepo? = null
 
-    fun save(personStream: Publisher<Task>): Any {
+    fun save(personStream: Array<Task>): Any {
         System.out.println("save")
-        personStream.subscribe(TaskSubscriber())
+        println(Arrays.toString(personStream))
+//        personStream.subscribe(TaskSubscriber())
         return true
     }
 

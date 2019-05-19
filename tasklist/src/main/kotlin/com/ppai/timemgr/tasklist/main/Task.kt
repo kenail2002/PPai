@@ -15,4 +15,6 @@ import javax.persistence.Table
 class Task {
     @Id //主键z
     private val id: Long? = null
+
+    override fun toString(): String = "id=" + id
 }
