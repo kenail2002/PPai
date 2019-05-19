@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired
 class TaskSubscriber : Subscriber<Task> {
     @Autowired
     private val taskRepo: TaskRepo? = null
+
     override fun onSubscribe(subscription: Subscription) {
     }
 

@@ -1,6 +1,5 @@
 package com.ppai.timemgr.tasklist.main
 
-import org.reactivestreams.Publisher
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType.APPLICATION_JSON_VALUE
@@ -13,7 +12,7 @@ import reactor.core.publisher.Mono
 class TaskController(@Autowired private val repository: TaskRepository) {
 
     @ResponseStatus(HttpStatus.CREATED)
-     @PostMapping("/task",consumes = arrayOf(APPLICATION_STREAM_JSON_VALUE,APPLICATION_JSON_VALUE))
+    @PostMapping("/task", consumes = arrayOf(APPLICATION_STREAM_JSON_VALUE, APPLICATION_JSON_VALUE))
     internal fun create(@RequestBody personStream: List<Task>): Any {
         return this.repository.save(personStream)
     }
