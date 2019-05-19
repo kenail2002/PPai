@@ -14,9 +14,9 @@ class TaskRepository {
     @Autowired
     private val taskRepo: TaskRepo? = null
 
-    fun save(personStream: Array<Task>): Any {
+    fun save(personStream: List<Task>): Any {
         System.out.println("save")
-        println(Arrays.toString(personStream))
+        println((personStream))
 //        personStream.subscribe(TaskSubscriber())
         return true
     }

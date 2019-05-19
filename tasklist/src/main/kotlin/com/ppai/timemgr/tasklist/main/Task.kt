@@ -1,8 +1,8 @@
 package com.ppai.timemgr.tasklist.main
 
+import com.fasterxml.jackson.annotation.JsonProperty
 import lombok.Data
-import org.springframework.context.annotation.Scope
-import org.springframework.context.annotation.ScopedProxyMode
+import org.jetbrains.annotations.NotNull
 import javax.persistence.Entity
 import javax.persistence.Id
 import javax.persistence.Table
@@ -11,10 +11,10 @@ import javax.persistence.Table
 @Entity
 @Data
 @Table
-@Scope(scopeName = "request", proxyMode = ScopedProxyMode.TARGET_CLASS)
-class Task {
-    @Id //主键z
-    private val id: Long? = null
-
+data class Task(
+        @NotNull
+        @Id //主键z
+        @JsonProperty("id")
+        val id: Long) {
     override fun toString(): String = "id=" + id
 }
