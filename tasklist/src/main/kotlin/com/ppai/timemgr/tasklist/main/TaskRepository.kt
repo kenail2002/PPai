@@ -12,6 +12,7 @@ class TaskRepository {
     private val taskRepo: TaskRepo? = null
 
     fun save(personStream: List<Task>): Any {
+        personStream.forEach{ taskRepo!!.save(it)}
         System.out.println("save")
         println((personStream))
 //        personStream.subscribe(TaskSubscriber())
