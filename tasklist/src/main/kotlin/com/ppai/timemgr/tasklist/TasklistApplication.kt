@@ -3,7 +3,7 @@ package com.ppai.timemgr.tasklist
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
-@SpringBootApplication
+@SpringBootApplication//(exclude = arrayOf(DataSourceAutoConfiguration::class))
 class TasklistApplication
 
 fun main(args: Array<String>) {

@@ -26,10 +26,10 @@
     <!-- dataSource 配置   -->
     <bean id="dataSource"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="org.postgresql.Driver" />
-        <property name="url" value="jdbc:postgresql://localhost/postgres" />
-        <property name="username" value="postgres" />
-        <property name="password" value="postgres" />
+        <property name="driverClassName" value="org.postgresql.Driver"/>
+        <property name="url" value="jdbc:postgresql://localhost:5432/postgres"/>
+        <property name="username" value="postgres"/>
+        <property name="password" value="postgres"/>
     </bean>
     <!--
         <bean id="dataSource" class="org.h2.jdbcx.JdbcConnectionPool" destroy-method="dispose">
@@ -60,9 +60,10 @@
     <!-- 配置使Spring采用CGLIB代理 -->
 
     <!-- 启用对事务注解的支持
-    <tx:annotation-driven transaction-manager="transactionManager"/> -->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
 
-    <bean id="repository" class="com.ppai.timemgr.tasklist.main.TaskRepository"/>
+    <bean id="repository" class="com.ppai.timemgr.tasklist.main.TaskRepository"/> -->
+
 
     <!-- Cache配置
         <aop:aspectj-autoproxy proxy-target-class="true" />

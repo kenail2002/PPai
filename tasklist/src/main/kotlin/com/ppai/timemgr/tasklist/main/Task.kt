@@ -10,7 +10,7 @@ import javax.persistence.Table
 
 @Entity
 @Data
-@Table
+@Table(name = "LOGRECORD")
 data class Task(
         @NotNull
         @Id //主键z
