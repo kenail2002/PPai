@@ -7,6 +7,7 @@ import org.springframework.http.MediaType.APPLICATION_STREAM_JSON_VALUE
 import org.springframework.web.bind.annotation.*
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
+import java.util.*
 
 @RestController
 class TaskController(@Autowired private val repository: TaskRepository) {
@@ -23,7 +24,7 @@ class TaskController(@Autowired private val repository: TaskRepository) {
     }
 
     @GetMapping("/task/{id}")
-    internal fun findById(@PathVariable id: String): Mono<Task> {
+    internal fun findById(@PathVariable id: Long): Mono<Optional<Task>> {
         return this.repository.findOne(id)
     }
 }
