@@ -10,11 +10,18 @@ import javax.persistence.Table
 
 @Entity
 @Data
-@Table
+@Table(name = "LOGRECORD")
 data class Task(
         @NotNull
         @Id //主键z
         @JsonProperty("id")
-        val id: Long) {
+        val id: Long,
+        @JsonProperty("logLevel")
+        var loglevel: String,
+        @JsonProperty("threadName")
+        var threadName: String,
+        @JsonProperty("msg")
+        var msg: String
+) {
     override fun toString(): String = "id=" + id
 }

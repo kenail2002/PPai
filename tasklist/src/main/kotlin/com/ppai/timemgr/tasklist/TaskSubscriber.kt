@@ -1,7 +1,7 @@
 package com.ppai.timemgr.tasklist
 
 import com.ppai.timemgr.tasklist.main.Task
-import com.ppai.timemgr.tasklist.main.dao.TaskRepo
+import com.ppai.timemgr.tasklist.main.TaskRepo
 import org.reactivestreams.Subscriber
 import org.reactivestreams.Subscription
 import org.springframework.beans.factory.annotation.Autowired

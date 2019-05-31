@@ -4,6 +4,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
+
+////(exclude = arrayOf(DataSourceAutoConfiguration::class))
 class TasklistApplication
 
 fun main(args: Array<String>) {

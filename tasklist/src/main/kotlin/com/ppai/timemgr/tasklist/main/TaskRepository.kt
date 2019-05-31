@@ -1,20 +1,18 @@
 package com.ppai.timemgr.tasklist.main
 
-import com.ppai.timemgr.tasklist.main.dao.TaskRepo
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Repository
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
 
 @Repository("repository")
-class TaskRepository {
-    @Autowired
-    private val taskRepo: TaskRepo? = null
+class TaskRepository(@Autowired private val taskRepo: TaskRepo) {
 
     fun save(personStream: List<Task>): Any {
-        personStream.forEach{ taskRepo!!.save(it)}
         System.out.println("save")
         println((personStream))
+        personStream.forEach { taskRepo!!.save(it) }
+
 //        personStream.subscribe(TaskSubscriber())
         return true
     }
