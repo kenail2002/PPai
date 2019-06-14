@@ -27,42 +27,51 @@ $.fn.serializeObject = function()
    return o;
 };
 
+
+
     </script>
 
     <script type="application/javascript">
 function onClik(){
 	    var jsonuserinfo = $('#task_001').serializeObject();
 	    var data=JSON.stringify(jsonuserinfo);
-		alert(data);
-		var xhr = new XMLHttpRequest();
+ 		var xhr = new XMLHttpRequest();
   xhr.open('POST','/task', true);
   xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
 
   // send the collected data as JSON
   xhr.send(data);
-
+xhr.onreadystatechange = function() {
+    if (xhr.readyState == XMLHttpRequest.DONE) {
+        console.log("response="+xhr.responseText);
+	 window.location.href="/tasklist/lst.html";
+            }
+}
   xhr.onloadend = function () {
     // done
   };
 }
+
+
 
     </script>
 </head>
 <body>
 <form action="/task" id="task_001" method="post">
     <table>
-<!--
-    {
-        "id":"1",
-        "level":"5",
-        "title":"去医院拿药",
-        "descr":"测试2",
-        "owner":"张三"
-    }  --> <tr>
-        <td>id</td>
-        <td><input id="id" name="id" class="easyui-textbox" data-options="iconCls:'icon-search'"
-                   style="width:300px"></td>
-    </tr>
+        <!--
+            {
+                "id":"1",
+                "level":"5",
+                "title":"去医院拿药",
+                "descr":"测试2",
+                "owner":"张三"
+            }  -->
+        <tr>
+            <td>id</td>
+            <td><input id="id" name="id" class="easyui-textbox" data-options="iconCls:'icon-search'"
+                       style="width:300px"></td>
+        </tr>
         <tr>
             <td>level</td>
             <td><input id="level" name="level" class="easyui-textbox" data-options="iconCls:'icon-search'"

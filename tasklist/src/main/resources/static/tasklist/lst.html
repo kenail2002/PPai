@@ -1,10 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>任务清单</title>
+    <link href="../uilib/easyui/themes/metro/easyui.css" rel="stylesheet" type="text/css">
+    <link href="../uilib/easyui/themes/mobile.css" rel="stylesheet" type="text/css">
+    <link href="../uilib/easyui/themes/icon.css" rel="stylesheet" type="text/css">
+    <script src="../uilib/easyui/jquery.min.js" type="text/javascript"></script>
+    <script src="../uilib/easyui/jquery.easyui.min.js" type="text/javascript"></script>
+    <script src="../uilib/easyui/jquery.easyui.mobile.js" type="text/javascript"></script>
 </head>
 <body>
+当前任务列表
+<table id="dg" title="taskdata" class="easyui-datagrid" style="width:700px;height:350px"
+       url="/tasklist"
+       pagination="true"
+       rownumbers="true" fitColumns="true" singleSelect="true">
+    <thead>
+    <tr>
+        <th field="id" width="50">Id</th>
+        <th field="title" width="50">title</th>
+        <th field="level" width="50">level</th>
+        <th field="descr" width="50">descr</th>
+        <th field="owner" width="50">owner</th>
+    </tr>
+    </thead>
+</table>
 
 </body>
 </html>

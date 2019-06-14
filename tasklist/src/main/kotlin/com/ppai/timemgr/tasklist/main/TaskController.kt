@@ -17,7 +17,7 @@ class TaskController(@Autowired private val repository: TaskRepository) {
         return this.repository.save(personStream)
     }
 
-    @GetMapping("/tasklist")
+    @PostMapping("/tasklist")
     internal fun list(): Flux<Task> {
         return this.repository.findAll()
     }
