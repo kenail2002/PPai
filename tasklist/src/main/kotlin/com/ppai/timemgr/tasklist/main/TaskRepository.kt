@@ -11,22 +11,22 @@ import java.util.*
 @Repository("repository")
 class TaskRepository(@Autowired private val taskRepo: TaskRepo) {
 
-    fun save(personStream: List<Task>): Any {
+    fun save(personStream:  Task ): Any {
         System.out.println("save")
         println((personStream))
-        personStream.forEach { taskRepo!!.save(it) }
+         taskRepo.save(personStream)
 
 //        personStream.subscribe(TaskSubscriber())
         return true
     }
 
     fun findAll(): Flux<Task> {
-        return taskRepo!!.findAll().toFlux()
+        return taskRepo.findAll().toFlux()
 
     }
 
     fun findOne(id: Long): Mono<Optional<Task>> {
         System.out.println("findOne")
-        return (taskRepo!!.findById(id)).toMono()
+        return (taskRepo.findById(id)).toMono()
     }
 }
