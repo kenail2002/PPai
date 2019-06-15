@@ -15,26 +15,28 @@
         var row = $("#dg").datagrid("getSelected");
         if (row) {
             console.log("id="+row.id + ",title=" + row.title);
-            windows.location.href="/tasklist/t.html"
+            window.location.href="/task/"+row.id
         }else{
             alert("请先选择具体任务");
         }
     }
+
     </script>
 </head>
 <body>
 <input type="button" value="修改任务信息" onclick="getSelectedRow()">
-<table id="dg"  name="dg" title="当前任务列表" class="easyui-datagrid" style="width:1700px;"
+<table id="dg" name="dg" title="当前任务列表" class="easyui-datagrid" style="width:1700px;"
        url="/tasklist"
-       pagination="true"
-       rownumbers="true" fitColumns="true" singleSelect="true">
+       pagination="true" sortName="id" multiSort="true"
+       checkOnSelect="true" sortOrder="desc"
+       rownumbers="true" fitColumns="true" singleSelect="true" pageSize="50" pageList="[10,50,100,200,500,1000]">
     <thead>
     <tr>
         <th field="id" width="50px">Id</th>
-        <th field="title" width="500px">title</th>
-        <th field="level" width="50px">level</th>
-        <th field="descr" width="1000px">descr</th>
-        <th field="owner" width="80px">owner</th>
+        <th field="title" width="500px">标题</th>
+        <th field="level" width="50px">级别</th>
+        <th field="descr" width="1000px">描述</th>
+        <th field="owner" width="80px">责任人</th>
     </tr>
     </thead>
 </table>
