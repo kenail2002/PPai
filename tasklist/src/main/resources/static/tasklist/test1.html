@@ -1,0 +1,30 @@
+<Script language="javascript">
+
+function GetRequest() {
+
+   var url = location.search;  
+  alert(url)
+   var theRequest = new Map();
+
+   if (url.indexOf("?") != -1) {
+
+      var str = url.substr(1);
+
+      strs = str.split("&");
+
+      for(var i = 0; i < strs.length; i ++) {
+
+         theRequest.set(strs[i].split("=")[0], unescape(strs[i].split("=")[1]));
+
+      }
+
+   }
+   for (var [key, value] of theRequest) {
+  console.log(key + ' = ' + value);
+}
+
+   return theRequest;
+
+}
+alert(GetRequest());
+</Script>
