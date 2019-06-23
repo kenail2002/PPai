@@ -12,10 +12,10 @@ import java.util.*
 @Repository("repository")
 class TaskRepository(@Autowired private val taskRepo: TaskRepo) {
 
-    fun save(personStream:  Task ): Any {
+    fun save(personStream: Task): Any {
         System.out.println("save")
         println((personStream))
-         taskRepo.save(personStream)
+        taskRepo.save(personStream)
 
 //        personStream.subscribe(TaskSubscriber())
         return true
@@ -33,5 +33,9 @@ class TaskRepository(@Autowired private val taskRepo: TaskRepo) {
 
     fun pageQuery(pageData: Pageable): Flux<Task> {
         return (taskRepo.findAll(pageData)).toFlux()
+    }
+
+    fun deleteById(id: Long): Unit {
+        taskRepo.deleteById(id)
     }
 }

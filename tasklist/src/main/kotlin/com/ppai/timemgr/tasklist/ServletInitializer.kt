@@ -17,13 +17,6 @@ class ServletInitializer : SpringBootServletInitializer() {
             ClassPathXmlApplicationContext("applicationContext.xml")
         }
     }
-
-    override fun createSpringApplicationBuilder(): SpringApplicationBuilder {
-        var bdr = SpringApplicationBuilder(TasklistApplication::class.java)
-        bdr.profiles("jetty1").properties("server.port=9000")
-        return bdr
-    }
-
     override fun configure(application: SpringApplicationBuilder): SpringApplicationBuilder {
         return application.sources(TasklistApplication::class.java)
     }

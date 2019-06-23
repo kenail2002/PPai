@@ -20,6 +20,11 @@ class TaskController(@Autowired private val repository: TaskRepository) {
         return this.repository.save(personStream)
     }
 
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    @PutMapping("/task", consumes = arrayOf(APPLICATION_STREAM_JSON_VALUE, APPLICATION_JSON_VALUE, APPLICATION_FORM_URLENCODED_VALUE + ";charset=UTF-8"))
+    internal fun update(@RequestBody personStream: Task): Any {
+        return this.repository.save(personStream)
+    }
     /*
     page: 1
     rows: 10
@@ -31,7 +36,7 @@ class TaskController(@Autowired private val repository: TaskRepository) {
                       @RequestParam("rows") pageSize: Int,
                       @RequestParam("sort") sort: String): Flux<Task> {
 
-        val pageable = PageRequest(currentPage-1, pageSize, Sort(Sort.Direction.DESC, sort))
+        val pageable = PageRequest(currentPage - 1, pageSize, Sort(Sort.Direction.DESC, sort))
         println("pageData:$pageable")
         return this.repository.pageQuery(pageable)
     }
@@ -40,4 +45,11 @@ class TaskController(@Autowired private val repository: TaskRepository) {
     internal fun findById(@PathVariable id: Long): Mono<Optional<Task>> {
         return this.repository.findOne(id)
     }
+
+    @DeleteMapping("/task/{id}")
+    internal fun deleteById(@PathVariable id: Long): Unit {
+        return this.repository.deleteById(id)
+    }
+
+
 }

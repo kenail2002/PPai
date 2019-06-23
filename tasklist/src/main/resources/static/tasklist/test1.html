@@ -1,29 +1,28 @@
 <Script language="javascript">
+	function GetRequest() {
 
-function GetRequest() {
+    var url = location.search;
+    alert(url)
+    var theRequest = new Map();
 
-   var url = location.search;  
-  alert(url)
-   var theRequest = new Map();
+    if (url.indexOf("?") != -1) {
 
-   if (url.indexOf("?") != -1) {
+        var str = url.substr(1);
 
-      var str = url.substr(1);
+        strs = str.split("&");
 
-      strs = str.split("&");
+        for (var i = 0; i < strs.length; i++) {
 
-      for(var i = 0; i < strs.length; i ++) {
+            theRequest.set(strs[i].split("=")[0], unescape(strs[i].split("=")[1]));
 
-         theRequest.set(strs[i].split("=")[0], unescape(strs[i].split("=")[1]));
+        }
 
-      }
+    }
+    for (var [key, value] of theRequest) {
+        console.log(key + ' = ' + value);
+    }
 
-   }
-   for (var [key, value] of theRequest) {
-  console.log(key + ' = ' + value);
-}
-
-   return theRequest;
+    return theRequest;
 
 }
 alert(GetRequest());
