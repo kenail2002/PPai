@@ -53,6 +53,34 @@
     };
 }
 		</script>
+    <Script language="javascript">
+	function GetRequest() {
+
+    var url = location.search;
+    alert(url)
+    var theRequest = new Map();
+
+    if (url.indexOf("?") != -1) {
+
+        var str = url.substr(1);
+
+        strs = str.split("&");
+
+        for (var i = 0; i < strs.length; i++) {
+
+            theRequest.set(strs[i].split("=")[0], unescape(strs[i].split("=")[1]));
+        }
+
+    }
+    for (var [key, value] of theRequest) {
+        console.log(key + ' = ' + value);
+     if(document.getElementById(key) ){ document.getElementById(key).value=value;}
+    }
+    return theRequest;
+}
+$(document).ready(GetRequest)
+
+</Script>
 </head>
 <body>
 <form action="/task" id="task_001" method="post">
@@ -62,7 +90,7 @@
                 id
             </td>
             <td>
-                <input id="id" name="id" class="easyui-textbox" data-options="iconCls:'icon-search'"
+                <input id="id" name="id"
                        style="width:300px">
             </td>
         </tr>
@@ -71,7 +99,7 @@
                 level
             </td>
             <td>
-                <input id="level" name="level" class="easyui-textbox" data-options="iconCls:'icon-search'"
+                <input id="level" name="level"
                        style="width:300px">
             </td>
         </tr>
@@ -80,7 +108,7 @@
                 标题
             </td>
             <td>
-                <input id="title" name="title" class="easyui-textbox" data-options="iconCls:'icon-search'"
+                <input id="title" name="title"
                        style="width:300px">
             </td>
         </tr>

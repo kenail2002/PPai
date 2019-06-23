@@ -20,7 +20,8 @@
     var row = $("#dg").datagrid("getSelected");
     if (row) {
         console.log("id=" + row.id + ",title=" + row.title);
-        window.location.href = "/tasklist/task/" + row.id
+        window.location.href = "/tasklist/tasklist/t.html?id=" + row.id+"&title="+row.title+"&level="
+		+ row.level+"&owner="+row.owner+"&descr="+row.descr;
     } else {
         alert("请先选择具体任务");
     }
