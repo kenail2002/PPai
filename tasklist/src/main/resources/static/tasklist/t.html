@@ -33,7 +33,7 @@ function onClik(){
 	    var jsonuserinfo = $('#task_001').serializeObject();
 	    var data=JSON.stringify(jsonuserinfo);
  		var xhr = new XMLHttpRequest();
-  xhr.open('POST','/task', true);
+  xhr.open('POST','/tasklist/task', true);
   xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
 
   // send the collected data as JSON
@@ -41,7 +41,7 @@ function onClik(){
 xhr.onreadystatechange = function() {
     if (xhr.readyState == XMLHttpRequest.DONE) {
         console.log("response="+xhr.responseText);
-	 window.location.href="/tasklist/lst.html";
+	 window.location.href="/tasklist/tasklist/lst.html";
             }
 }
   xhr.onloadend = function () {
