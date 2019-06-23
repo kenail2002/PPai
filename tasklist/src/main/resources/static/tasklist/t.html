@@ -53,12 +53,16 @@
     };
 }
 		</script>
+
     <Script language="javascript">
+    function decode(  input1)
+    {
+ 	return decodeURIComponent(input1.replace(/\+/g,  " "));
+    }
 	function GetRequest() {
 
     var url = location.search;
-    alert(url)
-    var theRequest = new Map();
+     var theRequest = new Map();
 
     if (url.indexOf("?") != -1) {
 
@@ -67,14 +71,13 @@
         strs = str.split("&");
 
         for (var i = 0; i < strs.length; i++) {
-
-            theRequest.set(strs[i].split("=")[0], unescape(strs[i].split("=")[1]));
+             theRequest.set(strs[i].split("=")[0], decode(strs[i].split("=")[1]));
         }
 
     }
     for (var [key, value] of theRequest) {
         console.log(key + ' = ' + value);
-     if(document.getElementById(key) ){ document.getElementById(key).value=value;}
+     if(document.getElementById(key) ){ document.getElementById(key).value=decode(value);}
     }
     return theRequest;
 }
