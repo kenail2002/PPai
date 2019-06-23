@@ -44,7 +44,7 @@
             <exclusions>
                 <exclusion>
                     <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                    <artifactId>spring-boot-starter-jetty</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -63,7 +63,7 @@
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-jetty</artifactId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -108,11 +108,24 @@
                     <compilerVersion>1.12</compilerVersion>
                 </configuration>
             </plugin>
+            <!-- Tomcat plugin -->
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <url>http://localhost:8080/manager</url>
+                    <server>TomcatServer</server>
+                    <username>tomcatspringboot</username>
+                    <password>tomcatspringboot</password>
+                </configuration>
+            </plugin>
+            <!--
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
-                <version>9.4.18.v20190429</version>
-            </plugin>
+                <version>9.4.19.v20190610</version>
+            </plugin> -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
