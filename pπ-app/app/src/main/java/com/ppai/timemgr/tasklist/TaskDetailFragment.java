@@ -15,11 +15,11 @@ import com.ppai.timemgr.tasklist.bean.TaskEntity;
 
 /**
  * A fragment representing a single Item detail screen.
- * This fragment is either contained in a {@link ItemListActivity}
- * in two-pane mode (on tablets) or a {@link ItemDetailActivity}
+ * This fragment is either contained in a {@link TaskListActivity}
+ * in two-pane mode (on tablets) or a {@link TaskDetailActivity}
  * on handsets.
  */
-public class ItemDetailFragment extends Fragment {
+public class TaskDetailFragment extends Fragment {
     /**
      * The fragment argument representing the item ID that this fragment
      * represents.
@@ -35,7 +35,7 @@ public class ItemDetailFragment extends Fragment {
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public ItemDetailFragment() {
+    public TaskDetailFragment() {
     }
 
     @Override

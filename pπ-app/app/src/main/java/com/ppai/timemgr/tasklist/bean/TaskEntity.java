@@ -12,6 +12,12 @@ public class TaskEntity implements java.io.Serializable
 		this.id=id;
 		this.title=title;
 	}
+	public TaskEntity(String id,String title,String descr)
+	{
+		this.id=id;
+		this.title=title;
+		this.content=descr;
+	}
 	public String getId()
 	{
 		return id;
