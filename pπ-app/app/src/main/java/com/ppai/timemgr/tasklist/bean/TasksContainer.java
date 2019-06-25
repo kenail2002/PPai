@@ -1,7 +1,6 @@
 package com.ppai.timemgr.tasklist.bean;
 
 import android.content.Context;
-
 import com.ppai.timemgr.tasklist.db.DataVisitor;
 
 import java.util.ArrayList;
@@ -42,7 +41,8 @@ public class TasksContainer {
             List<TaskEntity> ts = dv.getAllTasks();
             if (!ts.isEmpty()) {
                 ITEMS = ts;
-            } else {
+                ts.stream().forEach(it ->  ITEM_MAP.putIfAbsent(it.getId(),it));
+             } else {
                 //增加样例数据
                 for (int i = 0; i < 5; i++) {
                     String id = String.valueOf(i);
@@ -51,11 +51,8 @@ public class TasksContainer {
                     ITEM_MAP.putIfAbsent(id, e);
                 }
                 dv.insert(ts);
-
             }
-
         }
-
     }
 
 

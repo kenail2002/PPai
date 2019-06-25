@@ -13,6 +13,8 @@ import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.ppai.timemgr.tasklist.bean.TasksContainer;
 import com.ppai.timemgr.tasklist.bean.TaskEntity;
 
+import java.util.Map;
+
 /**
  * A fragment representing a single Item detail screen.
  * This fragment is either contained in a {@link TaskListActivity}
@@ -46,7 +48,8 @@ public class TaskDetailFragment extends Fragment {
             // Load the dummy content specified by the fragment
             // arguments. In a real-world scenario, use a Loader
             // to load content from a content provider.
-            mItem = TasksContainer.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
+            Map<String, TaskEntity> map =TasksContainer.ITEM_MAP;
+            mItem =map .get(getArguments().getString(ARG_ITEM_ID));
 
             Activity activity = this.getActivity();
             CollapsingToolbarLayout appBarLayout = (CollapsingToolbarLayout) activity.findViewById(R.id.toolbar_layout);
