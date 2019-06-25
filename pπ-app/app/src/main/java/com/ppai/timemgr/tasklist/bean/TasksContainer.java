@@ -41,15 +41,18 @@ public class TasksContainer {
             List<TaskEntity> ts = dv.getAllTasks();
             if (!ts.isEmpty()) {
                 ITEMS = ts;
-                ts.stream().forEach(it ->  ITEM_MAP.putIfAbsent(it.getId(),it));
-             } else {
+                for (TaskEntity it : ts) {
+                    ITEM_MAP.put(it.getId(), it);
+                }
+            } else {
                 //增加样例数据
                 for (int i = 0; i < 5; i++) {
                     String id = String.valueOf(i);
                     TaskEntity e = new TaskEntity(id, "任务" + i, "详细信息" + i);
                     ts.add(e);
-                    ITEM_MAP.putIfAbsent(id, e);
+                    ITEM_MAP.put(id, e);
                 }
+                ITEMS =ts;
                 dv.insert(ts);
             }
         }

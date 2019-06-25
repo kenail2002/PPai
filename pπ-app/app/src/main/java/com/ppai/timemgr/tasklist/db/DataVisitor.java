@@ -46,7 +46,9 @@ public class DataVisitor {
     }
 
     public void insert(List<TaskEntity> ts) {
-        ts.stream().forEach(it -> insert(it.getTitle(), it.getContent()));
+        for (TaskEntity it : ts) {
+            insert(it.getTitle(), it.getContent());
+        }
     }
 
     public Cursor fetch() {
