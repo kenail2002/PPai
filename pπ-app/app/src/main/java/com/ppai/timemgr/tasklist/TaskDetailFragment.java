@@ -50,15 +50,20 @@ public class TaskDetailFragment extends Fragment {
 
             Activity activity = this.getActivity();
             CollapsingToolbarLayout appBarLayout = (CollapsingToolbarLayout) activity.findViewById(R.id.toolbar_layout);
-            if (appBarLayout != null) {
-                appBarLayout.setTitle(mItem.getTitle());
+            if (appBarLayout != null ) {
+                if( mItem != null)
+                { appBarLayout.setTitle(mItem.getTitle());}
+                else
+                {
+                    appBarLayout.setTitle("测试xxx");
+                }
             }
         }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
+                             Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.item_detail, container, false);
 
         // Show the dummy content as text in a TextView.

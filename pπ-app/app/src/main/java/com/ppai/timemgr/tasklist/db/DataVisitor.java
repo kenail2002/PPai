@@ -16,6 +16,7 @@ import java.util.List;
  * DataVisitor
  */
 public class DataVisitor {
+    private static String[] columns = new String[]{DatabaseHelper._ID, DatabaseHelper.SUBJECT, DatabaseHelper.DESC};
 
     private DatabaseHelper dbHelper;
 
@@ -44,12 +45,11 @@ public class DataVisitor {
         database.insert(DatabaseHelper.TABLE_NAME, null, contentValue);
     }
 
-    public void insert(List<TaskEntity> ts ) {
-         ts.stream().forEach(it -> insert(it.getTitle(),it.getContent()));
+    public void insert(List<TaskEntity> ts) {
+        ts.stream().forEach(it -> insert(it.getTitle(), it.getContent()));
     }
 
     public Cursor fetch() {
-        String[] columns = new String[]{DatabaseHelper._ID, DatabaseHelper.SUBJECT, DatabaseHelper.DESC};
         Cursor cursor = database.query(DatabaseHelper.TABLE_NAME, columns, null, null, null, null, null);
         if (cursor != null) {
             cursor.moveToFirst();
@@ -59,13 +59,16 @@ public class DataVisitor {
 
     public List<TaskEntity> getAllTasks() {
         List<TaskEntity> lst = new ArrayList();
-        Cursor cs = fetch();
-        while (cs != null) {
-            TaskEntity t = new TaskEntity(String.valueOf(cs.getLong(1)), cs.getString(2),cs.getString(3));
-            lst.add(t);
-            if (!cs.moveToNext()) {
-                break;
+        try (Cursor cs = fetch()) {
+            while (cs != null && cs.getCount() > 0) {
+                TaskEntity t = new TaskEntity(cs.getString(cs.getColumnIndex(columns[0])), cs.getString(cs.getColumnIndex(columns[1])), cs.getString(cs.getColumnIndex(columns[2])));
+                lst.add(t);
+                if (!cs.moveToNext()) {
+                    break;
+                }
             }
+        } finally {
+
         }
         return lst;
     }
