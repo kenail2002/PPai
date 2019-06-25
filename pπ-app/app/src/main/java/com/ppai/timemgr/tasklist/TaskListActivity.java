@@ -70,11 +70,11 @@ public class TaskListActivity extends AppCompatActivity {
     }
 
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
-        recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(this, TasksContainer.ITEMS, mTwoPane));
+        recyclerView.setAdapter(new TasksRecylerViewAdapter(this, TasksContainer.ITEMS, mTwoPane));
     }
 
-    public static class SimpleItemRecyclerViewAdapter
-            extends RecyclerView.Adapter<SimpleItemRecyclerViewAdapter.ViewHolder> {
+    public static class TasksRecylerViewAdapter
+            extends RecyclerView.Adapter<TasksRecylerViewAdapter.ViewHolder> {
 
         private final TaskListActivity mParentActivity;
         private final List<TaskEntity> mValues;
@@ -101,9 +101,9 @@ public class TaskListActivity extends AppCompatActivity {
             }
         };
 
-        SimpleItemRecyclerViewAdapter(TaskListActivity parent,
-                                      List<TaskEntity> items,
-                                      boolean twoPane) {
+        TasksRecylerViewAdapter(TaskListActivity parent,
+                                List<TaskEntity> items,
+                                boolean twoPane) {
             mValues = items;
             mParentActivity = parent;
             mTwoPane = twoPane;
