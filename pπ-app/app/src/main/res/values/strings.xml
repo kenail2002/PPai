@@ -2,4 +2,6 @@
     <string name="app_name">乱笔头</string>
     <string name="first_menu_name">好记性不如乱笔头</string>
     <string name="title_item_detail">详细情况</string>
+    <string name="title_activity_edit_task">edit_task</string>
+    <string name="action_settings">Settings</string>
 </resources>
