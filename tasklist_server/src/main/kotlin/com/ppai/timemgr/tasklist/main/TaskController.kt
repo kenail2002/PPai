@@ -25,6 +25,7 @@ class TaskController(@Autowired private val repository: TaskRepository) {
     internal fun update(@RequestBody personStream: Task): Any {
         return this.repository.save(personStream)
     }
+
     /*
     page: 1
     rows: 10
@@ -36,7 +37,7 @@ class TaskController(@Autowired private val repository: TaskRepository) {
                       @RequestParam("rows") pageSize: Int,
                       @RequestParam("sort") sort: String): Flux<Task> {
 
-        val pageable = PageRequest(currentPage - 1, pageSize, Sort(Sort.Direction.DESC, sort))
+        val pageable = PageRequest.of(currentPage - 1, pageSize, Sort.by(Sort.Direction.DESC, sort))
         println("pageData:$pageable")
         return this.repository.pageQuery(pageable)
     }
