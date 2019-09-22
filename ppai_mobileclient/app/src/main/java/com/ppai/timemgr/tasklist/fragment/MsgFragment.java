@@ -34,7 +34,6 @@ public class MsgFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         initData();
     }
 
@@ -55,20 +54,13 @@ public class MsgFragment extends Fragment {
 
     private void initData() {
         names = new ArrayList<>();
-        names.add("关注");
-        names.add("推荐");
-        names.add("热点");
-        names.add("视频");
-        names.add("小说");
-        names.add("娱乐");
-        names.add("问答");
-        names.add("图片");
-        names.add("科技");
-        names.add("懂车帝");
-        names.add("体育");
-        names.add("财经");
-        names.add("军事");
-        names.add("国际");
-        names.add("健康");
+        names.add("所有");
+        names.add("优先");
+        names.add("重要");
+        names.add("工作");
+        names.add("生活");
+        names.add("家庭");
+        names.add("归档");
+        names.add("其它");
     }
 }
