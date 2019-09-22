@@ -14,6 +14,7 @@ import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.ppai.timemgr.tasklist.adapter.MainFragmentAdapter;
+import com.ppai.timemgr.tasklist.bean.TasksContainer;
 
 /**
  * 主框架
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        TasksContainer.fetchDataFromDB(getApplicationContext());
 
         ButterKnife.bind(this);
 
