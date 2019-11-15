@@ -63,10 +63,13 @@ public class TasksContainer {
         ctx = context;
     }
 
-    private static void addItem(TaskEntity item) {
+    public static void addItem(TaskEntity item) {
         ITEMS.add(item);
         ITEM_MAP.put(item.getId(), item);
         keys.add(item.getId());
+        List<TaskEntity> ts =new ArrayList();
+        ts.add(item);
+        dv.insert(ts);
     }
 
 }

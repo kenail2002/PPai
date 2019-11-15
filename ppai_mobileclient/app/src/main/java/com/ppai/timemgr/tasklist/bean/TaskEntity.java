@@ -6,17 +6,18 @@ import java.util.Date;
 
 public class TaskEntity implements java.io.Serializable
 {
-	
-	public TaskEntity(String id,String title)
+	static int taskNo=10;
+	public TaskEntity(String title1,String content1)
 	{
-		this.id=id;
-		this.title=title;
+		this.id=String.valueOf(taskNo++);
+		this.title=title1;
+		this.content =content1;
 	}
-	public TaskEntity(String id,String title,String descr)
+	public TaskEntity(String id,String title,String content1)
 	{
-		this.id=id;
+		this.id=String.valueOf(taskNo++);
 		this.title=title;
-		this.content=descr;
+		this.content=content1;
 	}
 	public String getId()
 	{

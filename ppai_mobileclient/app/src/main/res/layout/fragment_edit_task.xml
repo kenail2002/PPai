@@ -13,8 +13,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
-        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                     android:layout_width="fill_parent"
+        <TableLayout
+                android:layout_width="fill_parent"
                      android:layout_height="fill_parent">
 
             <TableRow
@@ -25,54 +25,64 @@
                         android:text="Time"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
+
                         android:layout_column="1" />
 
                 <TextClock
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/textClock"
-                        android:layout_column="2" />
+                        android:layout_weight="5"
+
+                        android:layout_column="2"/>
 
             </TableRow>
 
             <TableRow>
 
                 <TextView
-                        android:text="First Name"
+                        android:text="标题"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:layout_column="1" />
 
                 <EditText
                         android:width="200px"
+                        android:id="@+id/title111"
                         android:layout_width="wrap_content"
+                        android:layout_weight="5"
                         android:layout_height="wrap_content" />
             </TableRow>
 
             <TableRow>
 
                 <TextView
-                        android:text="Last Name"
+                        android:text="详情"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:layout_column="1" />
 
                 <EditText
-                        android:width="100px"
+                        android:width="300px"
+                        android:id="@+id/content112"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_weight="5"
+                        android:layout_height="wrap_content"/>
             </TableRow>
 
-            <TableRow
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent">
+<!--            <TableRow-->
+<!--                    android:layout_width="fill_parent"-->
+<!--                    android:layout_height="fill_parent">-->
 
-                <RatingBar
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/ratingBar"
-                        android:layout_column="2" />
-            </TableRow>
+<!--                <RatingBar-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:id="@+id/ratingBar"-->
+<!--                        android:layout_column="2" />-->
+<!--            </TableRow>-->
 
             <TableRow
                     android:layout_width="fill_parent"
@@ -85,7 +95,7 @@
                 <Button
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Submit"
+                        android:text="提交"
                         android:id="@+id/my_lovely_butt"
                         android:layout_column="2" />
             </TableRow>
