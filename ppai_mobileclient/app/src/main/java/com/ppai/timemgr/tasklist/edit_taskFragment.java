@@ -29,7 +29,7 @@ public class edit_taskFragment extends AppCompatActivity {
                 EditText editText1 =(EditText) findViewById (R.id.title111);
                 String title=editText1.getText().toString();
                 String content=((EditText) findViewById(R.id.content112)).getText().toString();
-                TasksContainer.addItem(new TaskEntity(title,content));
+                TasksContainer.addItem(new TaskEntity(title,content).setId());
             Log.d("edit_taskFragment","你输入的信息是："+title +",详情："+content);
 //                Snackbar.make(view, "你输入的信息是："+editText1.getText().toString(), Snackbar.LENGTH_LONG)
 //                        .setAction("Action", null).show();

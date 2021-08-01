@@ -82,13 +82,9 @@ public class MsgContentFragment extends Fragment {
             }
 
             @Override
-
             public void onItemClick(RecyclerView.ViewHolder vh) {
-
                 //单击事件
-
             }
-
         });
 
         return inflate;
@@ -122,9 +118,7 @@ public class MsgContentFragment extends Fragment {
             }
         };
 
-        TasksRecylerViewAdapter(Fragment parent,
-                                List<TaskEntity> items,
-                                boolean twoPane) {
+        TasksRecylerViewAdapter(Fragment parent, List<TaskEntity> items, boolean twoPane) {
             mValues = items;
             mParentActivity = parent;
             mTwoPane = twoPane;
@@ -171,46 +165,31 @@ public class MsgContentFragment extends Fragment {
         private RecyclerView recyclerView;
 
         public OnRecyclerItemClickListener(RecyclerView recyclerView) {
-
             this.recyclerView = recyclerView;
-
             mGestureDetector = new GestureDetectorCompat(recyclerView.getContext(), new ItemTouchHelperGestureListener());
-
         }
 
-
         @Override
-
         public boolean onInterceptTouchEvent(RecyclerView rv, MotionEvent e) {
-
             mGestureDetector.onTouchEvent(e);
             x = e.getX();
             y = e.getY();
-
             return false;
-
         }
 
 
         @Override
-
         public void onTouchEvent(RecyclerView rv, MotionEvent e) {
-
             mGestureDetector.onTouchEvent(e);
-
         }
 
 
         @Override
-
         public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
-
-
         }
 
         @Override
         public boolean onMenuItemClick(MenuItem item) {
-            // TODO Auto-generated method stub
             switch (item.getItemId()) {
                 case R.id.newTaks:
                     Snackbar.make(recyclerView, "新建任务", Snackbar.LENGTH_LONG)
@@ -237,45 +216,24 @@ public class MsgContentFragment extends Fragment {
         }
 
         private class ItemTouchHelperGestureListener extends GestureDetector.SimpleOnGestureListener {
-
-
             @Override
-
             public boolean onSingleTapUp(MotionEvent e) {
-
                 View child = recyclerView.findChildViewUnder(e.getX(), e.getY());
-
                 if (child != null) {
-
                     RecyclerView.ViewHolder vh = recyclerView.getChildViewHolder(child);
-
                     onItemClick(vh);
-
                 }
-
                 return true;
-
             }
-
 
             @Override
-
             public void onLongPress(MotionEvent e) {
-
                 View child = recyclerView.findChildViewUnder(e.getX(), e.getY());
-
                 if (child != null) {
-
                     RecyclerView.ViewHolder vh = recyclerView.getChildViewHolder(child);
-
                     onLongClick(vh);
-
                 }
-
             }
-
         }
-
     }
-
 }

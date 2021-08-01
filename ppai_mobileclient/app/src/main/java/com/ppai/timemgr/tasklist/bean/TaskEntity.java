@@ -4,154 +4,136 @@ import com.ppai.timemgr.tasklist.reminder.Reminder;
 
 import java.util.Date;
 
-public class TaskEntity implements java.io.Serializable
-{
-	static int taskNo=10;
-	public TaskEntity(String title1,String content1)
-	{
-		this.id=String.valueOf(taskNo++);
-		this.title=title1;
-		this.content =content1;
-	}
-	public TaskEntity(String id,String title,String content1)
-	{
-		this.id=String.valueOf(taskNo++);
-		this.title=title;
-		this.content=content1;
-	}
-	public String getId()
-	{
-		return id;
-	}
+public class TaskEntity implements java.io.Serializable {
+    static int taskNo = 10;
 
-	public void setId(String id)
-	{
-		this.id = id;
-	}
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 360051051369306652L;
+    public TaskEntity(String title1, String content1) {
+        this.title = title1;
+        this.content = content1;
+    }
 
-	private Date createTime;
+    public TaskEntity(String id1, String title, String content1) {
+        this.id = id1;
+        this.title = title;
+        this.content = content1;
+    }
 
-	private String title;
-	private String id;
-	private String content;
-	private String remark;
-	private String owner;
-	private Date startTime;
-	private Date endTime;
+    public String getId() {
+        return id;
+    }
 
-	private Reminder remder;
+    public void setId(String id) {
+        this.id = id;
+    }
 
-	private String status;
+    public TaskEntity setId() {
+        setId(String.valueOf(++taskNo));
+        return this;
+    }
 
-	private String source;
+    /**
+     *
+     */
+    private static final long serialVersionUID = 360051051369306652L;
 
-	public Date getCreateTime()
-	{
-		return createTime;
-	}
+    private Date createTime;
 
-	public void setCreateTime(Date createTime)
-	{
-		this.createTime = createTime;
-	}
+    private String title;
+    private String id;
+    private String content;
+    private String remark;
+    private String owner;
+    private Date startTime;
+    private Date endTime;
 
-	public String getTitle()
-	{
-		return title;
-	}
+    private Reminder remder;
 
-	public void setTitle(String title)
-	{
-		this.title = title;
-	} 
+    private String status;
 
-	public String getContent()
-	{
-		return content;
-	}
+    private String source;
 
-	public void setContent(String content)
-	{
-		this.content = content;
-	}
+    public Date getCreateTime() {
+        return createTime;
+    }
 
-	public String getRemark()
-	{
-		return remark;
-	}
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
 
-	public void setRemark(String remark)
-	{
-		this.remark = remark;
-	}
+    public String getTitle() {
+        return title;
+    }
 
-	public String getOwner()
-	{
-		return owner;
-	}
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-	public void setOwner(String owner)
-	{
-		this.owner = owner;
-	}
+    public String getContent() {
+        return content;
+    }
 
-	public Date getStartTime()
-	{
-		return startTime;
-	}
+    public void setContent(String content) {
+        this.content = content;
+    }
 
-	public void setStartTime(Date startTime)
-	{
-		this.startTime = startTime;
-	}
+    public String getRemark() {
+        return remark;
+    }
 
-	public Date getEndTime()
-	{
-		return endTime;
-	}
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
 
-	public void setEndTime(Date endTime)
-	{
-		this.endTime = endTime;
-	}
+    public String getOwner() {
+        return owner;
+    }
 
-	public Reminder getRemder()
-	{
-		return remder;
-	}
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
 
-	public void setRemder(Reminder remder)
-	{
-		this.remder = remder;
-	}
+    public Date getStartTime() {
+        return startTime;
+    }
 
-	public String getStatus()
-	{
-		return status;
-	}
+    public void setStartTime(Date startTime) {
+        this.startTime = startTime;
+    }
 
-	public void setStatus(String status)
-	{
-		this.status = status;
-	}
+    public Date getEndTime() {
+        return endTime;
+    }
 
-	public String getSource()
-	{
-		return source;
-	}
+    public void setEndTime(Date endTime) {
+        this.endTime = endTime;
+    }
 
-	public void setSource(String source)
-	{
-		this.source = source;
-	}
-	
-	public String toSting()
-	{
-		return this.id+":"+this.title;
-	}
+    public Reminder getRemder() {
+        return remder;
+    }
+
+    public void setRemder(Reminder remder) {
+        this.remder = remder;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getSource() {
+        return source;
+    }
+
+    public void setSource(String source) {
+        this.source = source;
+    }
+
+    public String toSting() {
+        return this.id + ":" + this.title;
+    }
 
 }
